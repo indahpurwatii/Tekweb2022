@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indah Purwati</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div id="app">
+    <!-- sidebar -->
+    <input type="checkbox" id="check">
+    <div class="sidebar">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- bagian header -->
+    <header class="fixed-top bg-white shadow-sm">
+      <div class="container">
+        <h1><a href="">Indah</a></h1>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- menu mobile -->
+        <label for="check" class="mobile-menu"><i class="fas fa-bars fa-2x"></i></label>
+      </div>
+    </header>
+
+    <!-- bagian banner -->
+    <section class="banner" style="margin-top: 60px !important;">
+      <div class="container">
+        <div class="banner-left">
+          <img v-bind:src="header.imageProfile">
+          <h2>Hai...<br>
+            Saya {{ header.name }} <span class="efek-ngetik"></span></h2>
+          <p>Selamat datang di portfolio saya!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- bagian about -->
+    <section id="about">
+      <div class="container">
+        <h3>About</h3>
+        <p>{{ header.description }}</p>
+        <p></p>
+      </div>
+    </section>
+
+    <!-- bagian skills -->
+    <section id="skills">
+      <div class="container">
+        <h3>Skills</h3>
+        <h4>{{ header.skills.html.title }}</h4>
+        <div class="bar">
+          <span class="nilai html">{{ header.skills.html.value }}</span>
+        </div>
+
+        <h4>{{ header.skills.css.title }}</h4>
+        <div class="bar">
+          <span class="nilai css">{{ header.skills.css.value }}</span>
+        </div>
+
+        <h4>{{ header.skills.js.title }}</h4>
+        <div class="bar">
+          <span class="nilai js">{{ header.skills.js.value }}</span>
+        </div>
+
+        <h4>{{ header.skills.php.title }}</h4>
+        <div class="bar">
+          <span class="nilai php">{{ header.skills.php.value }}</span>
+        </div>
+
+        <h4>{{ header.skills.photoshop.title }}</h4>
+        <div class="bar">
+          <span class="nilai ps">{{ header.skills.photoshop.value }}</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- bagian portfolio -->
+    <section id="portfolio">
+      <div class="container">
+        <h3>Portfolio</h3>
+        <div class="col-4">
+          <a href="">
+            <img src="./image/me.2.jpeg">
+            <span>Portfolio 1</span>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="">
+            <img src="./image/me.2.jpeg">
+            <span>Portfolio 2</span>
+          </a>
+        </div>
+
+        <div class="col-4">
+          <a href="">
+            <img src="./image/me.2.jpeg">
+            <span>Portfolio 3</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles -->
+    <section id="articles">
+      <div class="container">
+        <h3>Articles</h3>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6" v-for="item in articles">
+            <div class="card my-2">
+              <img loading="lazy" class="card-img-top" v-bind:src="item.thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p>
+                  <small class="text-muted">Diposting pada {{item.published_at}}</small>
+                  <br>
+                  <small class="text-muted">Oleh {{item.author}}</small>
+                </p>
+                <p class="card-text">{{item.description}}</p>
+                <a :href="'/read.html?article='+item.content" class="btn btn-primary w-50" role="button">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- bagian contact -->
+    <section id="contact">
+      <div class="container">
+        <h3>Contact</h3>
+        <div class="row justify-content-center">
+          <div class="col-lg-3">
+            <h4 class="text-primary">Instagram</h4>
+            <p class="text-muted">Indahpurwatiii</p>
+          </div>
+
+          <div class="col-lg-3">
+            <h4 class="text-primary">Email</h4>
+            <p class="text-muted text-break">indahpurwatii08@gmail.com</p>
+          </div>
+
+          <div class="col-lg-3">
+            <h4 class="text-primary">Telp/Hp</h4>
+            <p class="text-muted">+62 8229 996 890</p>
+          </div>
+          <div class="col-lg-3">
+            <h4 class="text-primary">WhatsApp</h4>
+            <p class="text-muted">08229996890</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- bagian footer -->
+    <footer>
+      <div class="container">
+        <small>Indah purwati.</small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <!-- Vue, Axios, Custom script -->
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

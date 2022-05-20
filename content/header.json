@@ -1,0 +1,27 @@
+{
+  "name": "Indah Purwati",
+  "description": "Nama saya Indah purwati, saya berasal dari Natuna, Kepulaun Riau. Saya lahir pada 08 November 2002. saya anak pertama dari 3 bersaudara.",
+  "skills": {
+    "html": {
+      "title": "HTML",
+      "value": "70%"
+    },
+    "css": {
+      "title": "CSS",
+      "value": "60%"
+    },
+    "js": {
+      "title": "JavaScript",
+      "value": "50%"
+    },
+    "php": {
+      "title": "Php",
+      "value": "50%"
+    },
+    "photoshop": {
+      "title": "Adobe Photoshop",
+      "value": "50%"
+    }
+  },
+  "imageProfile": "./image/me.1.jpeg"
+}

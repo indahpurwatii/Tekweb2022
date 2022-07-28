@@ -1,6 +1,109 @@
 ## API POINTS
 
-Berikut adalah api point yang digunakan untuk membangun portfolio saya menggunakan article
+Berikut adalah api point yang digunakan untuk membangun portfolio saya menggunakan user dan atrikel
+
+### User
+
+> getAllUser()
+
+getAllUser adalah fungsi dimana ketika hendak mengambil data dari seluruh pengguna
+
+```
+GET: /user
+
+response:
+[
+    {
+        "id"            : "",
+        "avatar"        : "",
+        "nama"          : "",
+        "desc_about"    : "",
+    },
+    ...
+]
+```
+
+> getUserById()
+
+getUserById merupakan fungsi ketika ingin mengambil/memanggil data user berdasarkan `id`
+
+```
+GET: /user/[id]
+
+response:
+{
+        "id"            : "",
+        "avatar"        : "",
+        "nama"          : "",
+        "desc_about"    : "",
+},
+```
+
+> createUser()
+
+createUser merupakan fungsi untuk menambahkan data pengguna/user
+
+```
+POST: /user
+
+headers:
+{
+    Content-type: 'application/json',
+    Authorization: 'Bearer [access_token]'
+}
+
+body:
+{
+        "id"            : "",
+        "avatar"        : "",
+        "nama"          : "",
+        "desc_about"    : "",
+}
+
+response:
+true    // if success
+false   // if failure
+```
+
+> updateUser()
+
+updateUser merupakan fungsi ketika kita hendak mengubah sebuah data pada user tertentu
+
+```
+PUT: /user
+
+headers:
+{
+    Content-type: 'application/json',
+    Authorization: 'Bearer [access_token]'
+}
+
+body:
+{
+        "id"            : "",
+        "avatar"        : "",
+        "nama"          : "",
+        "desc_about"    : "",
+}
+```
+
+> deleteUser()
+
+fungsi deleteUser merupakan fungsi untuk menghapus data pengguna/user dari database
+
+```
+DELETE: /user/[id]
+
+headers:
+{
+    Content-type: 'application/json',
+    Authorization: 'Bearer [access_token]'
+}
+
+response:
+true    // if success
+false   // if failure
+```
 
 
 ## Article
@@ -128,6 +231,18 @@ berikut adalah desain database yang digunakan untuk membangun portfolio saya
 
 ```mermaid
     classDiagram
+        class user{
+        # id: int
+        + nama: string
+        + jurusan: string
+        + desc1: string
+        + desc2: string
+        + getAllUser()
+        + getUserById()
+        + createUser()
+        + updateUser()
+        + deleteUser()
+    }
         class article{
             # id: int
             + thumbnail: string

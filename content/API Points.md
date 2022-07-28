@@ -16,9 +16,12 @@ response:
 [
     {
         "id"                    : "",
-        "thumbnail_url"         : "",
+        "thumbnail"             : "",
         "title"                 : "",
-        "content"               : "",
+        "published_at"          : "",
+        "author"                : "",
+        "desc"                  : "",
+        "read"                  : ""
     }
     ...
 ]
@@ -34,9 +37,12 @@ GET: /article/[id]
 response:
 {
     "id"                    : "",
-    "thumbnail_url"         : "",
+    "thumbnail"             : "",
     "title"                 : "",
-    "content"               : "",
+    "published_at"          : "",
+    "author"                : "",
+    "desc"                  : "",
+    "read"                  : ""
 }
 ```
 
@@ -55,9 +61,13 @@ headers:
 
 body:
 {
-    "thumbnail_url"         : "",
+    "id"                    : "",
+    "thumbnail"             : "",
     "title"                 : "",
-    "content"               : "",
+    "published_at"          : "",
+    "author"                : "",
+    "desc"                  : "",
+    "read"                  : ""
 }
 
 response:
@@ -81,9 +91,12 @@ headers:
 body:
 {
     "id"                    : "",
-    "thumbnail_url"         : "",
+    "thumbnail"             : "",
     "title"                 : "",
-    "content"               : "",
+    "published_at"          : "",
+    "author"                : "",
+    "desc"                  : "",
+    "read"                  : ""
 }
 
 response:
@@ -113,16 +126,20 @@ false   // if failure
 
 berikut adalah desain database yang digunakan untuk membangun portfolio saya
 
-```
-    class article{
-        # id: int
-        + thumbnail_url: string
-        + title: string
-        + content: string
-        + getAllArticle()
-        + getArticleById()
-        + createArticle()
-        + updateArticle()
-        + deleteArticle()
-    }
+```mermaid
+    classDiagram
+        class article{
+            # id: int
+            + thumbnail: string
+            + title: string
+            + published_at: string
+            + author: string
+            + desc: string
+            + read: string
+            + getAllArticle()
+            + getArticleById()
+            + createArticle()
+            + updateArticle()
+            + deleteArticle()
+        }
 ```
